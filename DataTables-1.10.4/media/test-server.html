@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/jquery.dataTables.css">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+
+	<script type="text/javascript" language="javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+	<script type="text/javascript">
+		$(document).ready( function () {
+			//$('#example').DataTable();
+
+			// datasource--Arrays
+			//ajaxMakeDatatableTemp();
+
+			// datasource--Objects
+			ajaxMakeDatatableByObject();
+		} );
+
+		function ajaxMakeDatatableTemp() {
+			var data = [["Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$3,120"], ["Garrett Winters", "Director", "Edinburgh", "8422", "2011/07/25", "$5,300"]]
+			//$('#countInfoTb').DataTable().fnDestroy();
+			$('#example').DataTable({
+				data: data
+			});
+		}
+
+		function ajaxMakeDatatableByObject() {
+			var data = [{
+				"name": "Tiger Nixon",
+				"position": "System Architect",
+				"salary": "$3,120",
+				"start_date": "2011/04/25",
+				"office": "Edinburgh",
+				"extn": "5421"
+			},
+			{
+				"name": "Garrett Winters",
+				"position": "Director",
+				"salary": "$5,300",
+				"start_date": "2011/07/25",
+				"office": "Edinburgh",
+				"extn": "8422"
+			}]
+			$('#example').DataTable({
+				data: data,
+				columns:[
+					{data:'name'},
+					{data:'position'},
+					{data:'office'},
+					{data:'salary'}
+				]
+			});
+		}
+	</script>
+	<title>DataTables examples - Examples index</title>
+</head>
+<body class="wide"> 
+  <table id="example" class="display nowrap dataTable dtr-inline" cellspacing="0" width="100%" role="grid" aria-describedby="example_info" style="width: 100%;">
+  <!-- 
+   <thead>
+    <tr role="row">
+     <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 137px;">Name</th>
+     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 215px;">Position</th>
+     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 102px;">Office</th>
+     <th class="dt-body-right sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 42px;">Age</th>
+     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 92px;">Start date</th>
+     <th class="dt-body-right sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 79px;">Salary</th>
+    </tr>
+   </thead>
+   <tfoot>
+    <tr>
+     <th rowspan="1" colspan="1">Name</th>
+     <th rowspan="1" colspan="1">Position</th>
+     <th rowspan="1" colspan="1">Office</th>
+     <th class="dt-body-right" rowspan="1" colspan="1">Age</th>
+     <th rowspan="1" colspan="1">Start date</th>
+     <th class="dt-body-right" rowspan="1" colspan="1">Salary</th>
+    </tr>
+   </tfoot>
+   -->
+
+   <thead>
+    <tr role="row">
+     <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 137px;">Name</th>
+     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 215px;">Position</th>
+     <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 102px;">Office</th>
+     <th class="dt-body-right sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 79px;">Salary</th>
+    </tr>
+   </thead>
+   <tbody>
+   </tbody>
+
+  </table> 
+ </body>
+</html>
